@@ -1,0 +1,71 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>HookUpProject</groupId>
+  <artifactId>HookUpProject</artifactId>
+  <packaging>jar</packaging>
+  <version>0.0.1-SNAPSHOT</version>
+  <name>HookUpProject</name>
+  <url>http://maven.apache.org</url>
+  <repositories>
+   <repository>
+        <id>Tralfaz-Local-Maven</id>
+        <name>Tralfaz-Local-Maven-releases</name>
+        <url>http://tralfaz.local:8081/artifactory/private-internal-repository</url>
+    </repository>
+     <repository>
+            <id>Tralfaz-Third-Party-Maven</id>
+            <name>Tralfaz-Third-Party-Maven-Repository</name>
+            <url>http://tralfaz.local:8081/artifactory/third-party</url>
+    </repository>
+<!--      <repository> -->
+<!--             <id>Fitnesse-Maven</id> -->
+<!--             <name>Fitnesse-Maven</name> -->
+<!--             <url>http://192.168.150.107:8081/nexus/content/groups/public</url> -->
+<!--     </repository> -->
+        </repositories>
+        <pluginRepositories>
+                <pluginRepository>
+                        <id>central</id>
+                        <url>http://tralfaz.local:8081/artifactory/repo</url>
+                        <snapshots>
+                                <enabled>false</enabled>
+                        </snapshots>
+                </pluginRepository>
+                <pluginRepository>
+                        <id>snapshots</id>
+                        <url>http://tralfaz.local:8081/artifactory/repo</url>
+                        <releases>
+                                <enabled>false</enabled>
+                        </releases>
+                </pluginRepository>
+      </pluginRepositories>
+  <dependencies>
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>4.8.2</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      	<groupId>org.fitnesse</groupId>
+  		<artifactId>fitnesse</artifactId>
+ 		<version>20081201</version>
+    </dependency>
+  </dependencies>
+  <build>
+  	<plugins>
+  		<plugin>
+  			<groupId>org.apache.maven.plugins</groupId>
+  			<artifactId>maven-compiler-plugin</artifactId>
+  			<configuration>
+  			<source>1.5</source>
+  			<target>1.5</target>
+  			<excludes>
+  				<exclude>**/*Point*.java</exclude>
+  			</excludes>
+  			</configuration>
+  		</plugin>
+  	</plugins>
+  </build>
+</project>
